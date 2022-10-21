@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(CPPM5_Homework11_3)
 add_library(LeaverLib SHARED LeaverLib/Leaver.h LeaverLib/Leaver.cpp)
+target_compile_definitions(LeaverLib PRIVATE LEAVER_EXPORTS)
 add_executable(LeaverApp LeaverApp/LeaverApp.cpp)
 include_directories(LeaverLib)
 target_link_libraries(LeaverApp LeaverLib)

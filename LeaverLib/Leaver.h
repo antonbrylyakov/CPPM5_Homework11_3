@@ -1,15 +1,19 @@
 ﻿#pragma once
 #include <iostream>
 
+#ifdef _WIN32
 #ifdef LEAVER_EXPORTS
 #define LEAVER_API __declspec(dllexport)
 #else
 #define LEAVER_API __declspec(dllimport)
 #endif
+#else
+#define LEAVER_API
+#endif
 
-class Leaver
+class LEAVER_API Leaver
 {
 public:
-	LEAVER_API void leave(std::string name);
+	void leave(std::string name);
 };
 
